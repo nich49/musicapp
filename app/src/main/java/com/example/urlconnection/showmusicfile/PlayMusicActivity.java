@@ -124,14 +124,7 @@ public class PlayMusicActivity extends AppCompatActivity
       // 音楽ファイルを取得
       File file = (File) this.getIntent().getSerializableExtra("musicFile");
       String filePath = file.getPath();
-      // assetsから mp3 ファイルを読み込み
-      AssetFileDescriptor afdescripter = getAssets().openFd("sample01.mp3");
       // MediaPlayerに読み込んだ音楽ファイルを指定
-
-      // Fileから mp3 ファイルを読み込み
-      FileInputStream fileInputStream = new FileInputStream(file);
-      FileDescriptor fileDescriptor = fileInputStream.getFD();
-
       mediaPlayer.setDataSource(filePath);
 
       // 音量調整を端末のボタンに任せる
